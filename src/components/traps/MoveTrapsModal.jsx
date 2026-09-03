@@ -23,7 +23,11 @@ export default function MoveTrapsModal({ trapIds, onClose, onMoved }) {
     <div className="modal-overlay">
       <div className="modal">
         <h2>移動先を選択</h2>
-        <select value={newPersonId} onChange={(e) => setNewPersonId(e.target.value)}>
+        <select
+          className="select"
+          value={newPersonId}
+          onChange={(e) => setNewPersonId(e.target.value)}
+        >
           <option value="" disabled>
             選択してください
           </option>
@@ -34,10 +38,20 @@ export default function MoveTrapsModal({ trapIds, onClose, onMoved }) {
           ))}
         </select>
         <div className="modal__actions">
-          <button type="button" onClick={handleConfirm} disabled={submitting}>
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={handleConfirm}
+            disabled={submitting}
+          >
             {submitting ? '移動中...' : '移動する'}
           </button>
-          <button type="button" onClick={onClose} disabled={submitting}>
+          <button
+            type="button"
+            className="btn btn-secondary"
+            onClick={onClose}
+            disabled={submitting}
+          >
             キャンセル
           </button>
         </div>

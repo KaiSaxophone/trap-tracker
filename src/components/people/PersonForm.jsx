@@ -13,6 +13,7 @@ export default function PersonForm({ initialValues, onSubmit, onCancel, submitLa
     <form className="person-form" onSubmit={handleSubmit}>
       <input
         type="text"
+        className="input"
         placeholder="名前"
         value={name}
         onChange={(e) => setName(e.target.value)}
@@ -20,16 +21,21 @@ export default function PersonForm({ initialValues, onSubmit, onCancel, submitLa
       />
       <input
         type="text"
+        className="input"
         placeholder="メモ"
         value={memo}
         onChange={(e) => setMemo(e.target.value)}
       />
-      <button type="submit">{submitLabel}</button>
-      {onCancel && (
-        <button type="button" onClick={onCancel}>
-          キャンセル
+      <div className="form-actions">
+        <button type="submit" className="btn btn-primary">
+          {submitLabel}
         </button>
-      )}
+        {onCancel && (
+          <button type="button" className="btn btn-secondary" onClick={onCancel}>
+            キャンセル
+          </button>
+        )}
+      </div>
     </form>
   )
 }

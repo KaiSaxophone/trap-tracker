@@ -11,7 +11,12 @@ export default function MoveTrapsButton({ trapIds, onMoved }) {
 
   return (
     <>
-      <button type="button" disabled={trapIds.length === 0} onClick={() => setModalOpen(true)}>
+      <button
+        type="button"
+        className="btn btn-primary"
+        disabled={trapIds.length === 0}
+        onClick={() => setModalOpen(true)}
+      >
         選択した罠を移動
       </button>
       {modalOpen && (

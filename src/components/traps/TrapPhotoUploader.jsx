@@ -11,6 +11,7 @@ export default function TrapPhotoUploader({ file, onChange, existingPhotoUrl }) 
       {previewUrl && <img src={previewUrl} alt="罠の写真プレビュー" />}
       <input
         type="file"
+        className="input"
         accept="image/*"
         onChange={(e) => onChange(e.target.files?.[0] ?? null)}
       />

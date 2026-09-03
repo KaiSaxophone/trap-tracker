@@ -42,10 +42,10 @@ export default function PersonListEditor() {
 
   return (
     <div className="person-list-editor">
-      <h2>人を追加</h2>
+      <h2 className="section-heading">人を追加</h2>
       <PersonForm onSubmit={handleAdd} submitLabel="追加" />
 
-      <h2>人の一覧</h2>
+      <h2 className="section-heading">人の一覧</h2>
       <ul className="person-list">
         {people.map((person) => (
           <li key={person.id}>
@@ -58,14 +58,24 @@ export default function PersonListEditor() {
               />
             ) : (
               <div className="person-list__row">
-                <span>{person.name}</span>
-                <span>{person.memo}</span>
-                <button type="button" onClick={() => setEditingId(person.id)}>
-                  編集
-                </button>
-                <button type="button" onClick={() => handleDelete(person.id)}>
-                  削除
-                </button>
+                <span className="person-list__name">{person.name}</span>
+                <span className="person-list__memo">{person.memo}</span>
+                <div className="person-list__actions">
+                  <button
+                    type="button"
+                    className="btn btn-secondary btn-small"
+                    onClick={() => setEditingId(person.id)}
+                  >
+                    編集
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-danger btn-small"
+                    onClick={() => handleDelete(person.id)}
+                  >
+                    削除
+                  </button>
+                </div>
               </div>
             )}
           </li>

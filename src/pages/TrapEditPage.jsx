@@ -42,7 +42,7 @@ export default function TrapEditPage() {
 
   return (
     <div>
-      <h1>罠を編集</h1>
+      <h1 className="page-heading">罠を編集</h1>
       <TrapForm
         initialValues={trap}
         onSubmit={handleSubmit}
@@ -50,7 +50,7 @@ export default function TrapEditPage() {
         submitting={submitting}
         errorMessage={errorMessage}
       />
-      <button type="button" onClick={handleDelete}>
+      <button type="button" className="btn btn-danger" onClick={handleDelete}>
         この罠を削除
       </button>
     </div>

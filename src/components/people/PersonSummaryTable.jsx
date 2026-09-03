@@ -11,21 +11,25 @@ export default function PersonSummaryTable() {
   }))
 
   return (
-    <table className="person-summary-table">
-      <thead>
-        <tr>
-          <th>名前</th>
-          <th>保管台数</th>
-        </tr>
-      </thead>
-      <tbody>
-        {rows.map((row) => (
-          <tr key={row.id} onClick={() => navigate(`/people/${row.id}`)}>
-            <td>{row.name}</td>
-            <td>{row.count}</td>
+    <div className="table-scroll">
+      <table className="person-summary-table">
+        <thead>
+          <tr>
+            <th>名前</th>
+            <th>保管台数</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {rows.map((row) => (
+            <tr key={row.id} onClick={() => navigate(`/people/${row.id}`)}>
+              <td>{row.name}</td>
+              <td>
+                <span className="count-badge">{row.count}</span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   )
 }

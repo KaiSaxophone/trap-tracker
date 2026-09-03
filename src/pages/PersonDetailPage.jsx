@@ -23,11 +23,13 @@ export default function PersonDetailPage() {
 
   return (
     <div>
-      <h1>{person?.name}の保管する罠</h1>
-      <MoveTrapsButton
-        trapIds={[...selectedIds]}
-        onMoved={() => setSelectedIds(new Set())}
-      />
+      <h1 className="page-heading">{person?.name}の保管する罠</h1>
+      <div className="form-actions">
+        <MoveTrapsButton
+          trapIds={[...selectedIds]}
+          onMoved={() => setSelectedIds(new Set())}
+        />
+      </div>
       <TrapList
         traps={personTraps}
         selectedIds={selectedIds}

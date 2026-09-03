@@ -21,9 +21,9 @@ export default function TrapForm({ initialValues, onSubmit, submitLabel, submitt
 
   return (
     <form className="trap-form" onSubmit={handleSubmit}>
-      <label>
-        種類
-        <select value={type} onChange={(e) => setType(e.target.value)}>
+      <label className="form-field">
+        <span className="form-field__label">種類</span>
+        <select className="select" value={type} onChange={(e) => setType(e.target.value)}>
           {TRAP_TYPES.map((option) => (
             <option key={option.value} value={option.value}>
               {option.label}
@@ -32,9 +32,9 @@ export default function TrapForm({ initialValues, onSubmit, submitLabel, submitt
         </select>
       </label>
 
-      <label>
-        サイズ
-        <select value={size} onChange={(e) => setSize(e.target.value)}>
+      <label className="form-field">
+        <span className="form-field__label">サイズ</span>
+        <select className="select" value={size} onChange={(e) => setSize(e.target.value)}>
           {TRAP_SIZES.map((option) => (
             <option key={option.value} value={option.value}>
               {option.label}
@@ -43,19 +43,20 @@ export default function TrapForm({ initialValues, onSubmit, submitLabel, submitt
         </select>
       </label>
 
-      <label>
-        管理番号
+      <label className="form-field">
+        <span className="form-field__label">管理番号</span>
         <input
           type="text"
+          className="input"
           value={trapNumber}
           onChange={(e) => setTrapNumber(e.target.value)}
           required
         />
       </label>
 
-      <label>
-        所有者
-        <select value={ownerId} onChange={(e) => setOwnerId(e.target.value)} required>
+      <label className="form-field">
+        <span className="form-field__label">所有者</span>
+        <select className="select" value={ownerId} onChange={(e) => setOwnerId(e.target.value)} required>
           <option value="" disabled>
             選択してください
           </option>
@@ -67,9 +68,10 @@ export default function TrapForm({ initialValues, onSubmit, submitLabel, submitt
         </select>
       </label>
 
-      <label>
-        現在の保管場所
+      <label className="form-field">
+        <span className="form-field__label">現在の保管場所</span>
         <select
+          className="select"
           value={storageLocationId}
           onChange={(e) => setStorageLocationId(e.target.value)}
           required
@@ -93,7 +95,7 @@ export default function TrapForm({ initialValues, onSubmit, submitLabel, submitt
 
       {errorMessage && <p className="form-error">{errorMessage}</p>}
 
-      <button type="submit" disabled={submitting}>
+      <button type="submit" className="btn btn-primary" disabled={submitting}>
         {submitting ? '処理中...' : submitLabel}
       </button>
     </form>

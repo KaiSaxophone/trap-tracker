@@ -12,7 +12,7 @@ export default function TrapRow({ trap, ownerName, selected, onToggleSelect }) {
           onChange={() => onToggleSelect(trap.id)}
         />
       </td>
-      <td>{trap.photoUrl && <img src={trap.photoUrl} alt={trap.trapNumber} width={60} />}</td>
+      <td>{trap.photoUrl && <img className="trap-thumb" src={trap.photoUrl} alt={trap.trapNumber} />}</td>
       <td>{trap.trapNumber}</td>
       <td>{getTrapTypeLabel(trap.type)}</td>
       <td>{getTrapSizeLabel(trap.size)}</td>
