@@ -1,0 +1,10 @@
+rules_version = '2';
+
+// 認証なしの少人数内部ツールのため、URLを知っていれば誰でも読み書き可能とする（意図的な設計）
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      allow read, write: if true;
+    }
+  }
+}

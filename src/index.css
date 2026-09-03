@@ -1,0 +1,107 @@
+:root {
+  font: 16px/1.6 system-ui, 'Segoe UI', Roboto, sans-serif;
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.header__title {
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+}
+
+.header__nav {
+  display: flex;
+  gap: 16px;
+}
+
+.layout__main {
+  padding: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.person-summary-table tbody tr {
+  cursor: pointer;
+}
+
+.person-form,
+.trap-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 360px;
+  margin-bottom: 16px;
+}
+
+.person-list {
+  list-style: none;
+  padding: 0;
+}
+
+.person-list__row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.trap-photo-uploader img {
+  max-width: 200px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 8px;
+  min-width: 280px;
+}
+
+.modal__actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.form-error {
+  color: #c0392b;
+}
+
+.setup-notice {
+  max-width: 480px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
