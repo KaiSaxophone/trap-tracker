@@ -361,7 +361,7 @@ thead th {
 
 .trap-memo-cell {
   white-space: normal;
-  max-width: 10em;
+  min-width: 10em;
   overflow-wrap: break-word;
 }
 
