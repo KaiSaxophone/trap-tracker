@@ -15,6 +15,7 @@ export default function TrapList({ traps, selectedIds, onToggleSelect }) {
             <th>種類</th>
             <th>サイズ</th>
             <th>所有者</th>
+            <th>メモ</th>
             <th>更新日</th>
             <th></th>
           </tr>

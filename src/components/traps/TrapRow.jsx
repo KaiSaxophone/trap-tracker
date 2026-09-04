@@ -17,6 +17,7 @@ export default function TrapRow({ trap, ownerName, selected, onToggleSelect }) {
       <td>{getTrapTypeLabel(trap.type)}</td>
       <td>{getTrapSizeLabel(trap.size)}</td>
       <td>{ownerName}</td>
+      <td>{trap.memo}</td>
       <td>{formatTimestamp(trap.updatedAt)}</td>
       <td>
         <Link to={`/traps/${trap.id}/edit`}>編集</Link>
