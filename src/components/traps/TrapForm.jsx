@@ -13,10 +13,11 @@ export default function TrapForm({ initialValues, onSubmit, submitLabel, submitt
     initialValues?.storageLocationId ?? '',
   )
   const [photoFile, setPhotoFile] = useState(null)
+  const [memo, setMemo] = useState(initialValues?.memo ?? '')
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    onSubmit({ type, size, trapNumber, ownerId, storageLocationId }, photoFile)
+    onSubmit({ type, size, trapNumber, ownerId, storageLocationId, memo }, photoFile)
   }
 
   return (
@@ -92,6 +93,16 @@ export default function TrapForm({ initialValues, onSubmit, submitLabel, submitt
         onChange={setPhotoFile}
         existingPhotoUrl={initialValues?.photoUrl}
       />
+
+      <label className="form-field">
+        <span className="form-field__label">メモ（任意）</span>
+        <input
+          type="text"
+          className="input"
+          value={memo}
+          onChange={(e) => setMemo(e.target.value)}
+        />
+      </label>
 
       {errorMessage && <p className="form-error">{errorMessage}</p>}
 

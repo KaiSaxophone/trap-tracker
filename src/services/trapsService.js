@@ -12,7 +12,10 @@ import { deleteTrapPhoto, uploadTrapPhoto } from './storageService'
 
 const trapsCollection = collection(db, 'traps')
 
-export async function createTrap({ type, size, trapNumber, ownerId, storageLocationId }, photoFile) {
+export async function createTrap(
+  { type, size, trapNumber, ownerId, storageLocationId, memo },
+  photoFile,
+) {
   const trapRef = doc(trapsCollection)
   let photoUrl = ''
   let photoStoragePath = ''
@@ -31,6 +34,7 @@ export async function createTrap({ type, size, trapNumber, ownerId, storageLocat
     photoStoragePath,
     ownerId,
     storageLocationId,
+    memo,
     createdAt: serverTimestamp(),
     updatedAt: serverTimestamp(),
   })
@@ -38,7 +42,7 @@ export async function createTrap({ type, size, trapNumber, ownerId, storageLocat
 
 export async function updateTrap(
   trapId,
-  { type, size, trapNumber, ownerId, storageLocationId, photoUrl, photoStoragePath },
+  { type, size, trapNumber, ownerId, storageLocationId, memo, photoUrl, photoStoragePath },
   photoFile,
 ) {
   let nextPhotoUrl = photoUrl
@@ -59,6 +63,7 @@ export async function updateTrap(
     photoStoragePath: nextPhotoStoragePath,
     ownerId,
     storageLocationId,
+    memo,
     updatedAt: serverTimestamp(),
   })
 }
