@@ -17,7 +17,7 @@ export default function MoveTrapsButton({ trapIds, onMoved }) {
         disabled={trapIds.length === 0}
         onClick={() => setModalOpen(true)}
       >
-        選択した罠を移動
+        選択した捕獲機を移動
       </button>
       {modalOpen && (
         <MoveTrapsModal

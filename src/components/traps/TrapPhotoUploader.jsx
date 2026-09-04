@@ -8,7 +8,7 @@ export default function TrapPhotoUploader({ file, onChange, existingPhotoUrl }) 
 
   return (
     <div className="trap-photo-uploader">
-      {previewUrl && <img src={previewUrl} alt="罠の写真プレビュー" />}
+      {previewUrl && <img src={previewUrl} alt="捕獲機の写真プレビュー" />}
       <input
         type="file"
         className="input"

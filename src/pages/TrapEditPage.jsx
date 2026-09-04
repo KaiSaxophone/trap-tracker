@@ -29,7 +29,7 @@ export default function TrapEditPage() {
   }
 
   const handleDelete = async () => {
-    if (!window.confirm('この罠を削除しますか？')) return
+    if (!window.confirm('この捕獲機を削除しますか？')) return
     try {
       await deleteTrap(trapId, trap.photoStoragePath)
       navigate('/')
@@ -42,7 +42,7 @@ export default function TrapEditPage() {
 
   return (
     <div>
-      <h1 className="page-heading">罠を編集</h1>
+      <h1 className="page-heading">捕獲機を編集</h1>
       <TrapForm
         initialValues={trap}
         onSubmit={handleSubmit}
@@ -51,7 +51,7 @@ export default function TrapEditPage() {
         errorMessage={errorMessage}
       />
       <button type="button" className="btn btn-danger" onClick={handleDelete}>
-        この罠を削除
+        この捕獲機を削除
       </button>
     </div>
   )

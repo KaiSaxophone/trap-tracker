@@ -10,19 +10,17 @@ import { db } from '../firebase'
 
 const peopleCollection = collection(db, 'people')
 
-export async function addPerson({ name, memo }) {
+export async function addPerson({ name }) {
   await addDoc(peopleCollection, {
     name,
-    memo,
     createdAt: serverTimestamp(),
     updatedAt: serverTimestamp(),
   })
 }
 
-export async function updatePerson(personId, { name, memo }) {
+export async function updatePerson(personId, { name }) {
   await updateDoc(doc(db, 'people', personId), {
     name,
-    memo,
     updatedAt: serverTimestamp(),
   })
 }

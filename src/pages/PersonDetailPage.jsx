@@ -23,7 +23,7 @@ export default function PersonDetailPage() {
 
   return (
     <div>
-      <h1 className="page-heading">{person?.name}の保管する罠</h1>
+      <h1 className="page-heading">{person?.name}の保管する捕獲機</h1>
       <div className="form-actions">
         <MoveTrapsButton
           trapIds={[...selectedIds]}

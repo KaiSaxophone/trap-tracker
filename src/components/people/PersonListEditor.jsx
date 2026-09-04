@@ -29,7 +29,7 @@ export default function PersonListEditor() {
       (trap) => trap.ownerId === id || trap.storageLocationId === id,
     ).length
     if (linkedTrapCount > 0) {
-      window.alert(`この人は${linkedTrapCount}台の罠の所有者または保管場所になっているため削除できません。`)
+      window.alert(`この人は${linkedTrapCount}台の捕獲機の所有者または保管者になっているため削除できません。`)
       return
     }
     if (!window.confirm('この人を削除しますか？')) return
@@ -59,7 +59,6 @@ export default function PersonListEditor() {
             ) : (
               <div className="person-list__row">
                 <span className="person-list__name">{person.name}</span>
-                <span className="person-list__memo">{person.memo}</span>
                 <div className="person-list__actions">
                   <button
                     type="button"

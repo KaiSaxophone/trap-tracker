@@ -69,7 +69,7 @@ export default function TrapForm({ initialValues, onSubmit, submitLabel, submitt
       </label>
 
       <label className="form-field">
-        <span className="form-field__label">現在の保管場所</span>
+        <span className="form-field__label">現在の保管者</span>
         <select
           className="select"
           value={storageLocationId}

@@ -22,7 +22,7 @@ export default function TrapNewPage() {
 
   return (
     <div>
-      <h1 className="page-heading">罠を登録</h1>
+      <h1 className="page-heading">捕獲機を登録</h1>
       <TrapForm
         onSubmit={handleSubmit}
         submitLabel="登録"

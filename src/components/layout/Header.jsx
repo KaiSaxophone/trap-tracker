@@ -27,10 +27,10 @@ export default function Header() {
             トップ
           </NavLink>
           <NavLink to="/people" className={navLinkClassName} onClick={() => setMenuOpen(false)}>
-            人を管理
+            人を登録
           </NavLink>
           <NavLink to="/traps/new" className={navLinkClassName} onClick={() => setMenuOpen(false)}>
-            罠を登録
+            捕獲機を登録
           </NavLink>
         </nav>
       </div>
