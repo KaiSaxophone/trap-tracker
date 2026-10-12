@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { getTrapSizeLabel, getTrapTypeLabel } from '../../constants/trapOptions'
 import { formatTimestamp } from '../../utils/formatters'
+import ZoomableImage from '../common/ZoomableImage'
 
 export default function TrapRow({ trap, ownerName, selected, onToggleSelect }) {
   return (
@@ -12,7 +13,7 @@ export default function TrapRow({ trap, ownerName, selected, onToggleSelect }) {
           onChange={() => onToggleSelect(trap.id)}
         />
       </td>
-      <td>{trap.photoUrl && <img className="trap-thumb" src={trap.photoUrl} alt={trap.trapNumber} />}</td>
+      <td>{trap.photoUrl && <ZoomableImage className="trap-thumb" src={trap.photoUrl} alt={trap.trapNumber} />}</td>
       <td>{trap.trapNumber}</td>
       <td>{getTrapTypeLabel(trap.type)}</td>
       <td>{getTrapSizeLabel(trap.size)}</td>
