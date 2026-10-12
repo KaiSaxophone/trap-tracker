@@ -132,13 +132,52 @@ button {
 
 .header__toggle {
   display: none;
+  position: relative;
+  width: 44px;
+  height: 44px;
+  padding: 0;
   background: transparent;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-pill);
-  padding: 6px 14px;
+  border: none;
   cursor: pointer;
-  color: var(--accent);
-  font-size: 14px;
+}
+
+.header__toggle-bar {
+  position: absolute;
+  top: 21px;
+  left: 11px;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--accent);
+  transition:
+    transform 0.3s ease,
+    opacity 0.2s ease;
+}
+
+.header__toggle-bar:nth-child(1) {
+  transform: translateY(-7px);
+}
+
+.header__toggle-bar:nth-child(3) {
+  transform: translateY(7px);
+}
+
+.header__toggle--open .header__toggle-bar:nth-child(1) {
+  transform: translateY(0) rotate(45deg);
+}
+
+.header__toggle--open .header__toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.header__toggle--open .header__toggle-bar:nth-child(3) {
+  transform: translateY(0) rotate(-45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header__toggle-bar {
+    transition: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -159,8 +198,6 @@ button {
     gap: 0;
     order: 3;
     border-top: 1px solid var(--border);
-    margin-top: 12px;
-    padding-top: 8px;
   }
 
   .header__nav--open {

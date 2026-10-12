@@ -16,11 +16,14 @@ export default function Header() {
         </Link>
         <button
           type="button"
-          className="header__toggle"
+          className={`header__toggle${menuOpen ? ' header__toggle--open' : ''}`}
           aria-expanded={menuOpen}
+          aria-label={menuOpen ? 'メニューを閉じる' : 'メニューを開く'}
           onClick={() => setMenuOpen((prev) => !prev)}
         >
-          menu
+          <span className="header__toggle-bar" />
+          <span className="header__toggle-bar" />
+          <span className="header__toggle-bar" />
         </button>
         <nav className={`header__nav${menuOpen ? ' header__nav--open' : ''}`}>
           <NavLink to="/" end className={navLinkClassName} onClick={() => setMenuOpen(false)}>
